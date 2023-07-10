@@ -8,10 +8,23 @@ Some of the used technologies are opinionated and can be replaced:
 - Prettier (with sorting config)
 - ESLint
 
-## 🚀 How to use
+## How to use
 
 ```sh
 git clone git@github.com:rnnyrk/expo-router-supabase-social-auth.git YOUR_PROJECT
 cd YOUR_PROJECT && npm install
+```
+
+Create an environment file on `.env` / `.env.local` / `.env.development` and fill in the required properties:
+
+```bash
+EXPO_PUBLIC_SITE_URL=
+EXPO_PUBLIC_SUPABASE_URL=
+EXPO_PUBLIC_SUPABASE_PUBLIC_KEY=
+```
+
+Finally run the project:
+
+```sh
 npm run start
 ```
