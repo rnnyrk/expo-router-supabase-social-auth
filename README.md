@@ -18,7 +18,6 @@ cd YOUR_PROJECT && npm install
 Create an environment file on `.env` / `.env.local` / `.env.development` and fill in the required properties:
 
 ```bash
-EXPO_PUBLIC_SITE_URL=
 EXPO_PUBLIC_SUPABASE_URL=
 EXPO_PUBLIC_SUPABASE_PUBLIC_KEY=
 ```
