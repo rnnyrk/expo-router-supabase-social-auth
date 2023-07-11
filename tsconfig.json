@@ -17,72 +17,25 @@
     "jsx": "react-native",
     "baseUrl": ".",
     "paths": {
-      "common/*": [
-        "src/components/common/*"
-      ],
-      "modules/*": [
-        "src/components/modules/*"
-      ],
-      "utils": [
-        "src/utils"
-      ],
-      "utils/*": [
-        "src/utils/*"
-      ],
-      "hooks": [
-        "src/utils/hooks/index"
-      ],
-      "hooks/*": [
-        "src/utils/hooks/*"
-      ],
-      "queries/*": [
-        "src/queries/*"
-      ],
-      "client": [
-        "src/queryClient"
-      ],
-      "images": [
-        "./src/assets/images"
-      ],
-      "images/*": [
-        "./src/assets/images/*"
-      ],
-      "fonts/*": [
-        "src/assets/fonts/*"
-      ],
-      "store/*": [
-        "src/store/*"
-      ],
-      "styles/*": [
-        "src/styles/*"
-      ],
-      "styles": [
-        "src/styles/index"
-      ],
-      "types": [
-        "src/types/index"
-      ]
+      "common/*": ["src/components/common/*"],
+      "modules/*": ["src/components/modules/*"],
+      "utils": ["src/utils"],
+      "utils/*": ["src/utils/*"],
+      "hooks": ["src/utils/hooks/index"],
+      "hooks/*": ["src/utils/hooks/*"],
+      "queries/*": ["src/queries/*"],
+      "client": ["src/queryClient"],
+      "images": ["./src/assets/images"],
+      "images/*": ["./src/assets/images/*"],
+      "fonts/*": ["src/assets/fonts/*"],
+      "store/*": ["src/store/*"],
+      "styles/*": ["src/styles/*"],
+      "styles": ["src/styles/index"],
+      "types": ["src/types/index"]
     },
-    "typeRoots": [
-      "node_modules/@types"
-    ],
-    "lib": [
-      "DOM",
-      "DOM.Iterable",
-      "ESNext"
-    ]
+    "typeRoots": ["node_modules/@types"],
+    "lib": ["DOM", "DOM.Iterable", "ESNext"]
   },
-  "exclude": [
-    "node_modules",
-    "babel.config.js",
-    "@expo/metro-config",
-    "**/*.json",
-    "**/*.spec.ts"
-  ],
-  "include": [
-    "**/*.ts",
-    "**/*.tsx",
-    ".expo/types/**/*.ts",
-    "expo-env.d.ts"
-  ]
+  "exclude": ["node_modules", "babel.config.js", "@expo/metro-config", "**/*.json", "**/*.spec.ts"],
+  "include": ["**/*.ts", "**/*.tsx", ".expo/types/**/*.ts", "expo-env.d.ts"]
 }
