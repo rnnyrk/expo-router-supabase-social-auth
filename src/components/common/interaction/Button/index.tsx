@@ -1,5 +1,3 @@
-import * as React from 'react';
-
 import { ButtonLoader } from './components';
 import { ButtonContainer, ButtonIcon, ButtonLabel, ButtonWrapper } from './styled';
 import { ButtonContentProps, ButtonProps } from './types';

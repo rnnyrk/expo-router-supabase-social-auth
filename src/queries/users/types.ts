@@ -5,8 +5,6 @@ export type User = {
   email: string;
   name: string;
   created_at: string;
-  finished_onboarding: boolean;
-  group: string | null;
 };
 
 export type CreateUserProps = {

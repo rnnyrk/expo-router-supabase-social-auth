@@ -29,11 +29,6 @@ function CustomDrawerContent({ drawerPosition, navigation }: any) {
       style={{ flex: 1, marginTop: 24 }}
     >
       <DrawerItem
-        label="Mijn groepen"
-        onPress={() => navigation.navigate('index')}
-        labelStyle={DrawerLabelStyle}
-      />
-      <DrawerItem
         label="Instellingen"
         onPress={() => navigation.navigate('settings')}
         labelStyle={DrawerLabelStyle}

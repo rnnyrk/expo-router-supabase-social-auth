@@ -1,5 +1,3 @@
-import * as React from 'react';
-
 import { Dot } from '../Dot';
 import { ButtonLoaderContainer } from './styled';
 

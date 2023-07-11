@@ -6,7 +6,7 @@ import { supabase } from 'src/utils';
 export async function getUserByEmail(email: string): Promise<i.User | null> {
   const { data } = await supabase
     .from('users')
-    .select('id, email, name, finished_onboarding, group, created_at')
+    .select('id, email, name, created_at')
     .eq('email', email)
     .single();
 
@@ -23,7 +23,7 @@ export async function createUser({
       email,
       name,
     })
-    .select('id, email, name, finished_onboarding, group, created_at');
+    .select('id, email, name, created_at');
 
   return {
     data: data as unknown as i.User,
@@ -39,7 +39,7 @@ export async function updateUser({
     .from('users')
     .update(values)
     .eq('email', email)
-    .select('id, email, name, finished_onboarding, group, created_at');
+    .select('id, email, name, created_at');
 
   return {
     data: data as unknown as i.User,
