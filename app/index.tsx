@@ -108,7 +108,6 @@ export default function AuthScreen() {
           <Gsuite
             width={20}
             height={20}
-            style={{ marginRight: 8 }}
           />
           <Text>{loading ? 'Loading...' : 'Sign in with Google'}</Text>
         </Button>
@@ -120,9 +119,8 @@ export default function AuthScreen() {
             style={{ width: '100%' }}
           >
             <Apple
-              width={20}
+              width={18}
               height={20}
-              style={{ marginRight: 8 }}
             />
             <Text>{loading ? 'Loading...' : 'Sign in with Apple'}</Text>
           </Button>
