@@ -40,7 +40,7 @@ export default function AuthScreen() {
       const url = await getGoogleOAuthUrl();
       if (!url) return;
 
-      const result = await WebBrowser.openAuthSessionAsync(url, 'com.safeword://auth?', {
+      const result = await WebBrowser.openAuthSessionAsync(url, 'com.expobase://home/?', {
         showInRecents: true,
       });
 
@@ -71,7 +71,7 @@ export default function AuthScreen() {
       const url = await getAppleOAuthUrl();
       if (!url) return;
 
-      const result = await WebBrowser.openAuthSessionAsync(url, 'com.safeword://auth?', {
+      const result = await WebBrowser.openAuthSessionAsync(url, 'com.expobase://home/?', {
         showInRecents: true,
       });
 

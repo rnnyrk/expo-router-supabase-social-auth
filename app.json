@@ -1,8 +1,8 @@
 {
   "expo": {
-    "scheme": "com.supabase.auth",
-    "name": "supabase-social-auth",
-    "slug": "supabase-social-auth",
+    "scheme": "com.expobase",
+    "name": "expo-supabase-social-auth",
+    "slug": "expo-supabase-social-auth",
     "plugins": ["expo-router"],
     "experiments": {
       "tsconfigPaths": true,

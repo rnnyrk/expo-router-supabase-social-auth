@@ -41,17 +41,15 @@ function useProtectedRoute(user: UserType) {
     }
 
     const rootSegment = segments[0];
-    const isAppDir = rootSegment === '(app)';
+    console.log({ segments });
+
+    const isAppDir = rootSegment === undefined;
 
     // If the user is not signed in, and not on signin page
     if (!user) {
-      router.replace('/(app)');
-    } else if (user && isAppDir && segments.length === 1) {
-      if (user.finished_onboarding) {
-        router.replace('/(app)/home');
-      } else {
-        router.replace('/(app)/onboarding');
-      }
+      router.replace('/');
+    } else if (user && isAppDir) {
+      router.replace('/home/');
     }
   }, [user, segments]);
 }
@@ -108,7 +106,7 @@ export const SupabaseProvider = ({ children }: SupabaseProviderProps) => {
     const result = await supabase.auth.signInWithOAuth({
       provider: 'apple',
       options: {
-        redirectTo: 'com.safeword://auth',
+        redirectTo: 'com.expobase://home/',
         scopes: 'full_name email',
       },
     });
@@ -120,7 +118,7 @@ export const SupabaseProvider = ({ children }: SupabaseProviderProps) => {
     const result = await supabase.auth.signInWithOAuth({
       provider: 'google',
       options: {
-        redirectTo: 'com.safeword://auth',
+        redirectTo: 'com.expobase://home/',
       },
     });
 
