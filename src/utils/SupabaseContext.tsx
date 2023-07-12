@@ -36,13 +36,9 @@ function useProtectedRoute(user: UserType) {
   const router = useRouter();
 
   useEffect(() => {
-    if (user === undefined) {
-      return;
-    }
+    if (user === undefined) return;
 
     const rootSegment = segments[0];
-    console.log({ segments });
-
     const isAppDir = rootSegment === undefined;
 
     // If the user is not signed in, and not on signin page
@@ -60,16 +56,10 @@ export const SupabaseProvider = ({ children }: SupabaseProviderProps) => {
 
   async function getSupabaseUser(token: string) {
     const decodedToken = jwt_decode(token) as JwtPayload;
-
-    console.log({
-      decodedToken,
-      custom_claims: (decodedToken as any).user_metadata,
-    });
-
     const email = decodedToken.email;
     const name = decodedToken.name;
 
-    // Fetch user, is not existing, create the
+    // Fetch the user from Supabase, if not existing, create a new user
     const data = await getUserByEmail(email);
 
     if (data) {

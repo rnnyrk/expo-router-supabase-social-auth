@@ -101,26 +101,28 @@ export default function AuthScreen() {
       <Container>
         <Button
           onPress={onSignInWithGoogle}
-          disabled={loading}
+          isDisabled={loading}
           variant="social"
           style={{ marginBottom: 16, width: '100%' }}
         >
           <Gsuite
-            width={20}
-            height={20}
+            width={19}
+            height={19}
+            style={{ marginRight: 8 }}
           />
           <Text>{loading ? 'Loading...' : 'Sign in with Google'}</Text>
         </Button>
         {isIphone && (
           <Button
             onPress={onSignInWithApple}
-            disabled={loading}
+            isDisabled={loading}
             variant="social"
             style={{ width: '100%' }}
           >
             <Apple
-              width={18}
-              height={20}
+              width={20}
+              height={22}
+              style={{ marginRight: 8 }}
             />
             <Text>{loading ? 'Loading...' : 'Sign in with Apple'}</Text>
           </Button>
