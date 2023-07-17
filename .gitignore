@@ -49,3 +49,7 @@ stats.json
 expo-env.d.ts
 # @end expo-cli
 .env
+.env.local
+.env.development
+.env.staging
+.env.production

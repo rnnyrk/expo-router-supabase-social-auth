@@ -22,8 +22,14 @@ EXPO_PUBLIC_SUPABASE_URL=
 EXPO_PUBLIC_SUPABASE_PUBLIC_KEY=
 ```
 
-Finally run the project:
+Create a build for a simulator
 
-```sh
-npm run start
-```
+- iOS `eas build --profile simulator --platform ios`
+- Android `eas build --profile development --platform android`
+
+OR Create a build for a device
+
+- iOS `eas device:create` && `eas build --profile development --platform ios`
+- Android `eas build --profile development --platform android`
+
+Connect manually to the development server via `http://127.0.0.1:8081`
