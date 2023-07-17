@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import * as WebBrowser from 'expo-web-browser';
 
-import { getApplicationId, isIphone, SecureStoreAdapter } from 'utils';
+import { isIphone, SecureStoreAdapter } from 'utils';
 import { useSupabase } from 'utils/SupabaseContext';
 import { Button } from 'common/interaction';
 import { Container, LogoHeader } from 'common/layout';
@@ -13,9 +13,6 @@ export default function AuthScreen() {
   const [loading, setLoading] = useState<boolean>(false);
 
   useEffect(() => {
-    const applicationId = getApplicationId();
-    console.log({ applicationId });
-
     WebBrowser.warmUpAsync();
 
     return () => {
