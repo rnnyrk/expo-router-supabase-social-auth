@@ -3,10 +3,29 @@
     "scheme": "com.expobase",
     "name": "expo-supabase-social-auth",
     "slug": "expo-supabase-social-auth",
-    "plugins": ["expo-router"],
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.expobase",
+      "buildNumber": "1.0.0"
+    },
+    "android": {
+      "package": "com.expobase",
+      "versionCode": 1
+    },
+    "plugins": [
+      "expo-router"
+    ],
     "experiments": {
       "tsconfigPaths": true,
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "0fa689de-ea76-4074-b340-c6c4d2ec618c"
+      }
     }
   }
 }

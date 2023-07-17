@@ -63,7 +63,7 @@ export const ButtonWrapper = styled.View<ButtonWrapperProps>`
       ${isPressed &&
       css`
         border: 2px solid ${theme.colors.primaryHover};
-        background-color: ${theme.colors.gray};
+        background-color: ${theme.colors.primaryHover};
       `}
     `}
 
