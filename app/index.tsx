@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import * as WebBrowser from 'expo-web-browser';
 
 import { Env } from '@env';
-import { isIphone, SecureStoreAdapter } from '@utils';
+import { getApplicationId, isIphone, SecureStoreAdapter } from '@utils';
 import { useSupabase } from '@utils/SupabaseContext';
 import { Button } from '@common/interaction';
 import { Container, LogoHeader } from '@common/layout';
@@ -128,6 +128,14 @@ export default function AuthScreen() {
             <Text>{loading ? 'Loading...' : 'Sign in with Apple'}</Text>
           </Button>
         )}
+
+        <Text
+          size={16}
+          color="gray"
+          style={{ marginTop: 32 }}
+        >
+          {getApplicationId()}
+        </Text>
       </Container>
     </>
   );

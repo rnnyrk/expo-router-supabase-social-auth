@@ -17,5 +17,5 @@ type TextProps = {
   marginTop?: number;
   marginRight?: number;
   marginBottom?: number;
-  size?: 20 | 24 | 28 | 32 | 40 | 48 | 56 | 64;
+  size?: 12 | 16 | 20 | 24 | 28 | 32 | 40 | 48 | 56 | 64;
 };

@@ -15,7 +15,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   splash: {
     image: './src/assets/images/splash.png',
     resizeMode: 'cover',
-    backgroundColor: '#F75469',
+    backgroundColor: '#61C4E3',
   },
   updates: {
     fallbackToCacheTimeout: 0,
@@ -50,6 +50,14 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
             color: 'white',
           },
         ],
+      },
+    ],
+    [
+      'expo-build-properties',
+      {
+        ios: {
+          flipper: true,
+        },
       },
     ],
   ],
