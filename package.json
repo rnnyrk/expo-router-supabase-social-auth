@@ -13,7 +13,7 @@
     "android:staging": "APP_ENV=staging expo run:android",
     "ios:staging": "APP_ENV=staging expo run:ios",
     "start:production": "NODE_ENV=production APP_ENV=production expo start --dev-client",
-    "prebuild:production": "NODE_ENV=production APP_ENV=production expo prebuild",
+    "prebuild:production": "NODE_ENV=production APP_ENV=production expo prebuild --clean",
     "android:production": "NODE_ENV=production APP_ENV=production expo run:android",
     "ios:production": "NODE_ENV=production APP_ENV=production expo run:ios",
     "build:development:ios": "APP_ENV=development eas build --profile development --platform ios",
