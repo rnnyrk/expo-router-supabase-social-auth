@@ -2,9 +2,9 @@ import { useNavigation } from 'expo-router';
 import { Pressable, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
-import theme from 'styles/theme';
-import { Menu } from 'common/svg';
-import { Text } from 'common/typography';
+import theme from '@styles/theme';
+import { Menu } from '@common/svg';
+import { Text } from '@common/typography';
 
 import { LogoHeaderContainer } from './styled';
 

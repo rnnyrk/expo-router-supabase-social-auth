@@ -2,12 +2,12 @@ import 'styled-components';
 
 const theme = {
   colors: {
-    primary: '#00a7c1',
-    primaryHover: '#63B6C9',
-    primaryLight: '#D7FEFE',
+    primary: '#61C4E3',
+    primaryHover: '#31B2DB',
+    primaryLight: '#A6DEEF',
     black: '#1D191F',
     gray: '#CCCCCC',
-    darkGray: '#808080',
+    gray800: '#808080',
     white: '#FFFFFF',
     orange: '#F6662B',
     red: '#EB3456',

@@ -1,12 +1,12 @@
-import { Container } from 'common/layout';
-import { Text } from 'common/typography';
+import { Container } from '@common/layout';
+import { Text } from '@common/typography';
 
 export default function HomeScreen() {
   return (
     <Container>
       <Text
         align="center"
-        color="darkGray"
+        color="gray800"
         size={48}
       >
         Home

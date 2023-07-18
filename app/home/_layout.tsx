@@ -1,15 +1,16 @@
 import type { DrawerContentComponentProps } from '@react-navigation/drawer';
 import { DrawerItem } from '@react-navigation/drawer';
 import { Drawer } from 'expo-router/drawer';
+import { StatusBar } from 'expo-status-bar';
 import { ScrollView } from 'react-native';
 import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-context';
 
-import theme from 'styles/theme';
-import { useSupabase } from 'utils/SupabaseContext';
-import { LogoHeader } from 'common/layout';
+import theme from '@styles/theme';
+import { useSupabase } from '@utils/SupabaseContext';
+import { LogoHeader } from '@common/layout';
 
 const DrawerLabelStyle = {
-  color: theme.colors.darkGray,
+  color: theme.colors.gray800,
   fontSize: 24,
 };
 
@@ -34,12 +35,12 @@ function CustomDrawerContent({ drawerPosition, navigation }: any) {
         labelStyle={DrawerLabelStyle}
       />
       <DrawerItem
-        label="Instellingen"
+        label="Settings"
         onPress={() => navigation.navigate('settings')}
         labelStyle={DrawerLabelStyle}
       />
       <DrawerItem
-        label="Uitloggen"
+        label="Logout"
         onPress={signOut}
         labelStyle={DrawerLabelStyle}
       />
@@ -50,6 +51,7 @@ function CustomDrawerContent({ drawerPosition, navigation }: any) {
 export default function DrawerLayout() {
   return (
     <SafeAreaProvider>
+      <StatusBar style="dark" />
       <Drawer
         initialRouteName="index"
         screenOptions={{

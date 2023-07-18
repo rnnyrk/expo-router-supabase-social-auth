@@ -1,21 +1,20 @@
 import { useEffect, useState } from 'react';
+import { StatusBar } from 'expo-status-bar';
 import * as WebBrowser from 'expo-web-browser';
 
-import { getApplicationId, isIphone, SecureStoreAdapter } from 'utils';
-import { useSupabase } from 'utils/SupabaseContext';
-import { Button } from 'common/interaction';
-import { Container, LogoHeader } from 'common/layout';
-import { Apple, Gsuite } from 'common/svg';
-import { Text } from 'common/typography';
+import { Env } from '@env';
+import { getApplicationId, isIphone, SecureStoreAdapter } from '@utils';
+import { useSupabase } from '@utils/SupabaseContext';
+import { Button } from '@common/interaction';
+import { Container, LogoHeader } from '@common/layout';
+import { Apple, Gsuite } from '@common/svg';
+import { Text } from '@common/typography';
 
 export default function AuthScreen() {
   const { getAppleOAuthUrl, getGoogleOAuthUrl, setOAuthSession } = useSupabase();
   const [loading, setLoading] = useState<boolean>(false);
 
   useEffect(() => {
-    const applicationId = getApplicationId();
-    console.log({ applicationId });
-
     WebBrowser.warmUpAsync();
 
     return () => {
@@ -43,7 +42,7 @@ export default function AuthScreen() {
       const url = await getGoogleOAuthUrl();
       if (!url) return;
 
-      const result = await WebBrowser.openAuthSessionAsync(url, 'com.expobase://home/?', {
+      const result = await WebBrowser.openAuthSessionAsync(url, `${Env.BUNDLE_ID}://home/`, {
         showInRecents: true,
       });
 
@@ -74,7 +73,7 @@ export default function AuthScreen() {
       const url = await getAppleOAuthUrl();
       if (!url) return;
 
-      const result = await WebBrowser.openAuthSessionAsync(url, 'com.expobase://home/?', {
+      const result = await WebBrowser.openAuthSessionAsync(url, `${Env.BUNDLE_ID}://home/`, {
         showInRecents: true,
       });
 
@@ -100,6 +99,7 @@ export default function AuthScreen() {
 
   return (
     <>
+      <StatusBar style="dark" />
       <LogoHeader />
       <Container>
         <Button
@@ -130,6 +130,14 @@ export default function AuthScreen() {
             <Text>{loading ? 'Loading...' : 'Sign in with Apple'}</Text>
           </Button>
         )}
+
+        <Text
+          size={16}
+          color="gray"
+          style={{ marginTop: 32 }}
+        >
+          {getApplicationId()}
+        </Text>
       </Container>
     </>
   );
