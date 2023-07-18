@@ -1,3 +1,4 @@
+import path from 'path';
 import type { ConfigContext, ExpoConfig } from '@expo/config';
 
 import { ClientEnv, Env } from './env';
@@ -10,10 +11,10 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   slug: 'expo-supabase-social-auth',
   version: Env.VERSION.toString(),
   orientation: 'portrait',
-  icon: './src/assets/images/icon.png',
+  icon: path.resolve(__dirname, 'src/assets/images/icon.png'),
   userInterfaceStyle: 'automatic',
   splash: {
-    image: './src/assets/images/splash.png',
+    image: path.resolve(__dirname, 'src/assets/images/splash.png'),
     resizeMode: 'cover',
     backgroundColor: '#61C4E3',
   },
@@ -27,7 +28,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   },
   android: {
     adaptiveIcon: {
-      foregroundImage: './src/assets/images/adaptive-icon.png',
+      foregroundImage: path.resolve(__dirname, 'src/assets/images/adaptive-icon.png'),
       backgroundColor: '#FFFFFF',
     },
     package: Env.PACKAGE,
@@ -57,6 +58,10 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
       {
         ios: {
           flipper: true,
+        },
+        android: {
+          compileSdkVersion: 33,
+          kotlinVersion: '1.9.0',
         },
       },
     ],

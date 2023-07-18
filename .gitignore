@@ -53,3 +53,7 @@ expo-env.d.ts
 .env.development
 .env.staging
 .env.production
+# Expo
+.expo
+dist/
+web-build/

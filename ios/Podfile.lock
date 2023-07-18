@@ -74,7 +74,7 @@ PODS:
     - ExpoModulesCore
   - ExpoKeepAwake (12.3.0):
     - ExpoModulesCore
-  - ExpoModulesCore (1.5.4):
+  - ExpoModulesCore (1.5.7):
     - RCT-Folly (= 2021.07.22.00)
     - React-Core
     - React-NativeModulesApple
@@ -873,7 +873,7 @@ SPEC CHECKSUMS:
   expo-dev-menu-interface: bda969497e73dadc2663c479e0fa726ca79a306e
   ExpoHead: 8da645502363b53eeb99d99276a0adbe0ec8cff0
   ExpoKeepAwake: be4cbd52d9b177cde0fd66daa1913afa3161fc1d
-  ExpoModulesCore: cfc52053496bae101b7ce6cd20a0ebaefbf977c0
+  ExpoModulesCore: f8f3cac222bb0f574c77664d7e05817eaa97434b
   ExpoSecureStore: 57db3b6da8b59046e2057e95bf7738a8027b47c3
   ExpoSystemUI: fa4854e3226e87f86d3383570264c6e4e90bc782
   ExpoWebBrowser: 2c788f9c07718a780fe6d8bf2f6195c47609faaa
@@ -935,6 +935,6 @@ SPEC CHECKSUMS:
   Yoga: 8796b55dba14d7004f980b54bcc9833ee45b28ce
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
-PODFILE CHECKSUM: 712cdeaf9aa286fab19712da0911370a5a3d274b
+PODFILE CHECKSUM: 5d8e45beebf909f51215c0e80783cab8ce08ed02
 
 COCOAPODS: 1.12.1
