@@ -1,5 +1,5 @@
-import { Container } from 'common/layout';
-import { Text } from 'common/typography';
+import { Container } from '@common/layout';
+import { Text } from '@common/typography';
 
 export default function HomeScreen() {
   return (

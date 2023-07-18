@@ -73,14 +73,15 @@ const withEnvSuffix = (name) => {
 
 const client = z.object({
   APP_ENV: z.enum(['development', 'staging', 'production']),
+  APP_KEY_SUFFIX: z.enum(['DEV', 'ACC', 'PROD']),
   NAME: z.string(),
   BUNDLE_ID: z.string(),
   PACKAGE: z.string(),
   VERSION: z.string(),
 
   // ADD YOUR CLIENT ENV VARS HERE
-  [`EXPO_PUBLIC_SUPABASE_URL_${APP_KEY_SUFFIX}`]: z.string(),
-  [`EXPO_PUBLIC_SUPABASE_PUBLIC_KEY_${APP_KEY_SUFFIX}`]: z.string(),
+  EXPO_PUBLIC_SUPABASE_URL: z.string(),
+  EXPO_PUBLIC_SUPABASE_PUBLIC_KEY: z.string(),
 });
 
 const buildTime = z.object({
@@ -93,16 +94,15 @@ const buildTime = z.object({
  */
 const _clientEnv = {
   APP_ENV,
+  APP_KEY_SUFFIX,
   NAME: NAME,
   BUNDLE_ID: withEnvSuffix(BUNDLE_ID),
   PACKAGE: withEnvSuffix(PACKAGE),
   VERSION: packageJSON.version,
 
   // ADD YOUR ENV VARS HERE TOO
-  [`EXPO_PUBLIC_SUPABASE_URL_${APP_KEY_SUFFIX}`]:
-    process.env[`EXPO_PUBLIC_SUPABASE_URL_${APP_KEY_SUFFIX}`],
-  [`EXPO_PUBLIC_SUPABASE_PUBLIC_KEY_${APP_KEY_SUFFIX}`]:
-    process.env[`EXPO_PUBLIC_SUPABASE_PUBLIC_KEY_${APP_KEY_SUFFIX}`],
+  EXPO_PUBLIC_SUPABASE_URL: process.env[`EXPO_PUBLIC_SUPABASE_URL_${APP_KEY_SUFFIX}`],
+  EXPO_PUBLIC_SUPABASE_PUBLIC_KEY: process.env[`EXPO_PUBLIC_SUPABASE_PUBLIC_KEY_${APP_KEY_SUFFIX}`],
 };
 
 /**

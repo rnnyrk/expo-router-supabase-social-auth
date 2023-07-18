@@ -4,9 +4,9 @@ import { Drawer } from 'expo-router/drawer';
 import { ScrollView } from 'react-native';
 import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-context';
 
-import theme from 'styles/theme';
-import { useSupabase } from 'utils/SupabaseContext';
-import { LogoHeader } from 'common/layout';
+import theme from '@styles/theme';
+import { useSupabase } from '@utils/SupabaseContext';
+import { LogoHeader } from '@common/layout';
 
 const DrawerLabelStyle = {
   color: theme.colors.gray800,

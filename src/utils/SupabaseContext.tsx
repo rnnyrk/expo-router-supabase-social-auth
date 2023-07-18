@@ -3,7 +3,8 @@ import { createContext, useContext, useEffect, useState } from 'react';
 import { useRouter, useSegments } from 'expo-router';
 import jwt_decode, { JwtPayload } from 'jwt-decode';
 
-import { createUser, getUserByEmail } from 'queries/users';
+import { Env } from '@env';
+import { createUser, getUserByEmail } from '@queries/users';
 
 import { supabase } from './supabase';
 
@@ -96,7 +97,7 @@ export const SupabaseProvider = ({ children }: SupabaseProviderProps) => {
     const result = await supabase.auth.signInWithOAuth({
       provider: 'apple',
       options: {
-        redirectTo: 'com.expobase://home/',
+        redirectTo: `${Env.BUNDLE_ID}://home/`,
         scopes: 'full_name email',
       },
     });
@@ -108,7 +109,7 @@ export const SupabaseProvider = ({ children }: SupabaseProviderProps) => {
     const result = await supabase.auth.signInWithOAuth({
       provider: 'google',
       options: {
-        redirectTo: 'com.expobase://home/',
+        redirectTo: `${Env.BUNDLE_ID}://home/`,
       },
     });
 
