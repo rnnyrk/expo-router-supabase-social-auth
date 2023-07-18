@@ -1,6 +1,7 @@
 import type { DrawerContentComponentProps } from '@react-navigation/drawer';
 import { DrawerItem } from '@react-navigation/drawer';
 import { Drawer } from 'expo-router/drawer';
+import { StatusBar } from 'expo-status-bar';
 import { ScrollView } from 'react-native';
 import { SafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-context';
 
@@ -50,6 +51,7 @@ function CustomDrawerContent({ drawerPosition, navigation }: any) {
 export default function DrawerLayout() {
   return (
     <SafeAreaProvider>
+      <StatusBar style="dark" />
       <Drawer
         initialRouteName="index"
         screenOptions={{

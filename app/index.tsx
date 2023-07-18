@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { StatusBar } from 'expo-status-bar';
 import * as WebBrowser from 'expo-web-browser';
 
 import { Env } from '@env';
@@ -98,6 +99,7 @@ export default function AuthScreen() {
 
   return (
     <>
+      <StatusBar style="dark" />
       <LogoHeader />
       <Container>
         <Button
