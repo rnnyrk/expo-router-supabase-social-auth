@@ -1,4 +1,4 @@
-import { PressableProps, StyleProp, StyleSheet, ViewStyle } from 'react-native';
+import { PressableProps } from 'react-native';
 
 export type ButtonType = {
   children?: React.ReactNode;

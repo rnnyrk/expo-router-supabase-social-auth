@@ -9,7 +9,7 @@ import { useSupabase } from 'utils/SupabaseContext';
 import { LogoHeader } from 'common/layout';
 
 const DrawerLabelStyle = {
-  color: theme.colors.darkGray,
+  color: theme.colors.gray800,
   fontSize: 24,
 };
 
@@ -34,12 +34,12 @@ function CustomDrawerContent({ drawerPosition, navigation }: any) {
         labelStyle={DrawerLabelStyle}
       />
       <DrawerItem
-        label="Instellingen"
+        label="Settings"
         onPress={() => navigation.navigate('settings')}
         labelStyle={DrawerLabelStyle}
       />
       <DrawerItem
-        label="Uitloggen"
+        label="Logout"
         onPress={signOut}
         labelStyle={DrawerLabelStyle}
       />

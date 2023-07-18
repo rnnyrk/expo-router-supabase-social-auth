@@ -6,7 +6,7 @@ export default function HomeScreen() {
     <Container>
       <Text
         align="center"
-        color="darkGray"
+        color="gray800"
         size={48}
       >
         Home

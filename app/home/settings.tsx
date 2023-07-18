@@ -11,7 +11,7 @@ export default function Settings() {
     <Container>
       <Text
         align="center"
-        color="darkGray"
+        color="gray800"
         size={48}
       >
         Settings
