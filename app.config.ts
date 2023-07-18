@@ -38,7 +38,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
     [
       'app-icon-badge',
       {
-        enabled: true,
+        enabled: Env.APP_ENV === 'production' ? false : true,
         badges: [
           {
             text: Env.APP_ENV,
