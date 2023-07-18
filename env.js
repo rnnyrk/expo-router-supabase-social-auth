@@ -19,6 +19,13 @@ const path = require('path');
 const APP_ENV = process.env.APP_ENV ?? 'development';
 const envPath = path.resolve(__dirname, `.env.${APP_ENV}`);
 
+let APP_KEY_SUFFIX = 'DEV';
+if (APP_ENV === 'staging') {
+  APP_KEY_SUFFIX = 'ACC';
+} else if (APP_ENV === 'production') {
+  APP_KEY_SUFFIX = 'PROD';
+}
+
 require('dotenv').config({
   path: envPath,
 });
@@ -72,8 +79,8 @@ const client = z.object({
   VERSION: z.string(),
 
   // ADD YOUR CLIENT ENV VARS HERE
-  EXPO_PUBLIC_SUPABASE_URL: z.string(),
-  EXPO_PUBLIC_SUPABASE_PUBLIC_KEY: z.string(),
+  [`EXPO_PUBLIC_SUPABASE_URL_${APP_KEY_SUFFIX}`]: z.string(),
+  [`EXPO_PUBLIC_SUPABASE_PUBLIC_KEY_${APP_KEY_SUFFIX}`]: z.string(),
 });
 
 const buildTime = z.object({
@@ -92,8 +99,10 @@ const _clientEnv = {
   VERSION: packageJSON.version,
 
   // ADD YOUR ENV VARS HERE TOO
-  EXPO_PUBLIC_SUPABASE_URL: process.env.EXPO_PUBLIC_SUPABASE_URL,
-  EXPO_PUBLIC_SUPABASE_PUBLIC_KEY: process.env.EXPO_PUBLIC_SUPABASE_PUBLIC_KEY,
+  [`EXPO_PUBLIC_SUPABASE_URL_${APP_KEY_SUFFIX}`]:
+    process.env[`EXPO_PUBLIC_SUPABASE_URL_${APP_KEY_SUFFIX}`],
+  [`EXPO_PUBLIC_SUPABASE_PUBLIC_KEY_${APP_KEY_SUFFIX}`]:
+    process.env[`EXPO_PUBLIC_SUPABASE_PUBLIC_KEY_${APP_KEY_SUFFIX}`],
 };
 
 /**
