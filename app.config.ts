@@ -59,10 +59,6 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
         ios: {
           flipper: true,
         },
-        android: {
-          compileSdkVersion: 33,
-          kotlinVersion: '1.9.0',
-        },
       },
     ],
   ],

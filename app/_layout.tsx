@@ -1,4 +1,5 @@
 import { Stack } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { ThemeProvider } from 'styled-components';
 
@@ -10,6 +11,7 @@ export default function RootLayout() {
     <SafeAreaProvider>
       <ThemeProvider theme={theme}>
         <SupabaseProvider>
+          <StatusBar style="dark" />
           <Stack
             initialRouteName="index"
             screenOptions={{ header: () => null }}

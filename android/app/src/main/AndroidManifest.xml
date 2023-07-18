@@ -25,12 +25,9 @@
         <action android:name="android.intent.action.VIEW"/>
         <category android:name="android.intent.category.DEFAULT"/>
         <category android:name="android.intent.category.BROWSABLE"/>
-        <data android:scheme="com.expobase"/>
         <data android:scheme="com.expobase.development"/>
-        <data android:scheme="exp+expobase"/>
         <data android:scheme="com.expobase.development"/>
         <data android:scheme="exp+expo-supabase-social-auth"/>
-        <data android:scheme="com.expobase"/>
       </intent-filter>
     </activity>
     <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" android:exported="false"/>

@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "expo start --dev-client --clear",
-    "prebuild": "expo prebuild",
+    "prebuild": "expo prebuild --clean",
     "android": "expo run:android",
     "ios": "expo run:ios",
     "doctor": "npx expo-doctor",
