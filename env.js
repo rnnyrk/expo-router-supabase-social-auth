@@ -63,7 +63,7 @@ const withEnvSuffix = (name) => {
  *
  * Main rules:
  *    1. If you need your variable on the client-side, you should add it to the client schema; otherwise, you should add it to the buildTime schema.
- *    2. Whenever you want to add a new variable, you should add it to the correct schema based on the previous rule, then you should add it to the corresponding object (_clientEnv or _buildTimeEnv).
+ *    2. Whenever you want to add a new variable, you should add it to the correct schema based on the previous rule, then you should add it to the corresponding object (clientEnvVariables or buildTimeVariables).
  *
  * Note: `z.string()` means that the variable exists and can be an empty string, but not `undefined`.
  * If you want to make the variable required, you should use `z.string().min(1)` instead.
@@ -86,13 +86,13 @@ const client = z.object({
 
 const buildTime = z.object({
   // ADD YOUR BUILD TIME ENV VARS HERE
-  // SECRET_KEY: z.string(),
+  EAS_PROJECT_ID: z.string(),
 });
 
 /**
  * @type {Record<keyof z.infer<typeof client> , string | undefined>}
  */
-const _clientEnv = {
+const clientEnvVariables = {
   APP_ENV,
   APP_KEY_SUFFIX,
   NAME: NAME,
@@ -108,9 +108,9 @@ const _clientEnv = {
 /**
  * @type {Record<keyof z.infer<typeof buildTime> , string | undefined>}
  */
-const _buildTimeEnv = {
+const buildTimeVariables = {
   // ADD YOUR ENV VARS HERE TOO
-  // SECRET_KEY: process.env.SECRET_KEY,
+  EAS_PROJECT_ID: process.env.EAS_PROJECT_ID,
 };
 
 /**
@@ -119,13 +119,13 @@ const _buildTimeEnv = {
  * If the validation fails we throw an error and log the error to the console with a detailed message about missed variables
  * If the validation passes we export the merged and parsed env variables to be used in the app.config.ts file as well as a ClientEnv object to be used in the client-side code
  **/
-const _env = {
-  ..._clientEnv,
-  ..._buildTimeEnv,
+const envVariables = {
+  ...clientEnvVariables,
+  ...buildTimeVariables,
 };
 
 const merged = buildTime.merge(client);
-const parsed = merged.safeParse(_env);
+const parsed = merged.safeParse(envVariables);
 
 if (parsed.success === false) {
   console.error(
@@ -139,7 +139,7 @@ if (parsed.success === false) {
 }
 
 const Env = parsed.data;
-const ClientEnv = client.parse(_clientEnv);
+const ClientEnv = client.parse(clientEnvVariables);
 
 module.exports = {
   Env,

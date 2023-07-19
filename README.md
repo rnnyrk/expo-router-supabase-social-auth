@@ -1,5 +1,7 @@
 # Supabase Social Authentication with Expo Router
 
+[A blog post that explains the process of creating Google/Apple logins with Supabase, accompanies this repository](https://rnny.nl/blog/expo-supabase-social-auth).
+
 With this repository, I wanted to give an example and guidance on how to use Supabase Social Authentication together with Expo Router v2. Both Google Authentication as well as Apple Authentication are covered.
 
 Some of the used technologies are opinionated and can be replaced:
@@ -21,6 +23,7 @@ Create an environment file on `.env.development` and fill in the required proper
 ```bash
 EXPO_PUBLIC_SUPABASE_URL_DEV=
 EXPO_PUBLIC_SUPABASE_PUBLIC_KEY_DEV=
+EAS_PROJECT_ID=
 ```
 
 Create a build for a simulator
