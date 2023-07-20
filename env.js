@@ -41,6 +41,7 @@ require('dotenv').config({
 const BUNDLE_ID = 'com.expobase'; // ios bundle id
 const PACKAGE = 'com.expobase'; // android package name
 const NAME = APP_KEY_SUFFIX === 'PROD' ? 'Expobase' : `Expobase ${APP_KEY_SUFFIX}`; // app name
+const BUILD_VERSION = 2;
 
 /**
  * We declare a function withEnvSuffix that will add a suffix to the variable name based on the APP_ENV
@@ -78,6 +79,7 @@ const client = z.object({
   BUNDLE_ID: z.string(),
   PACKAGE: z.string(),
   VERSION: z.string(),
+  BUILD_VERSION: z.number(),
 
   // ADD YOUR CLIENT ENV VARS HERE
   EXPO_PUBLIC_SUPABASE_URL: z.string(),
@@ -95,10 +97,11 @@ const buildTime = z.object({
 const clientEnvVariables = {
   APP_ENV,
   APP_KEY_SUFFIX,
-  NAME: NAME,
+  NAME,
   BUNDLE_ID: withEnvSuffix(BUNDLE_ID),
   PACKAGE: withEnvSuffix(PACKAGE),
   VERSION: packageJSON.version,
+  BUILD_VERSION,
 
   // ADD YOUR ENV VARS HERE TOO
   EXPO_PUBLIC_SUPABASE_URL: process.env[`EXPO_PUBLIC_SUPABASE_URL_${APP_KEY_SUFFIX}`],
