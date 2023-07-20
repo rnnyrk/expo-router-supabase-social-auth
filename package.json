@@ -29,7 +29,6 @@
   "dependencies": {
     "@react-navigation/drawer": "6.6.3",
     "@supabase/supabase-js": "2.26.0",
-    "@types/react": "~18.2.14",
     "app-icon-badge": "0.0.12",
     "dotenv": "16.3.1",
     "expo": "^49.0.3",
@@ -61,6 +60,7 @@
   "devDependencies": {
     "@babel/core": "^7.20.0",
     "@ianvs/prettier-plugin-sort-imports": "4.0.2",
+    "@types/react": "~18.2.14",
     "@types/react-native": "0.72.2",
     "@types/styled-components": "5.1.26",
     "@types/styled-components-react-native": "5.2.1",
