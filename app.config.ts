@@ -25,6 +25,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   ios: {
     supportsTablet: true,
     bundleIdentifier: Env.BUNDLE_ID,
+    buildNumber: Env.BUILD_VERSION.toString(),
   },
   android: {
     adaptiveIcon: {
@@ -32,6 +33,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
       backgroundColor: '#FFFFFF',
     },
     package: Env.PACKAGE,
+    versionCode: Env.BUILD_VERSION,
   },
   plugins: [
     'expo-router',

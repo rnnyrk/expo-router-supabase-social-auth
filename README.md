@@ -35,3 +35,7 @@ OR Create a build for a device
 
 - iOS `eas device:create` && `eas build --profile development --platform ios`
 - Android `eas build --profile development --platform android`
+
+Submit the build:
+
+- iOS `APP_ENV=staging eas submit -p ios --profile staging`
