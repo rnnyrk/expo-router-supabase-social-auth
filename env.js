@@ -41,7 +41,7 @@ require('dotenv').config({
 const BUNDLE_ID = 'com.expobase'; // ios bundle id
 const PACKAGE = 'com.expobase'; // android package name
 const NAME = APP_KEY_SUFFIX === 'PROD' ? 'Expobase' : `Expobase ${APP_KEY_SUFFIX}`; // app name
-const BUILD_VERSION = 2;
+const BUILD_VERSION = 1;
 
 /**
  * We declare a function withEnvSuffix that will add a suffix to the variable name based on the APP_ENV
